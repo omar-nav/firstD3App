@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>first D3 App</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+<style>
+    text {
+        font-size: 17px;
+        font-family: Futura;
+    }
+</style>
+<body>
+    <div id = "vizcontainer">
+        <svg style="width:500px;height:500px;border:1px lightgray solid; background: cornflowerblue;" />
+    </div>
+</body>
+<script>
+    d3.select("svg")
+        .append("line")
+        .attr("x1",20)
+        .attr("y1",20)
+        .attr("x2",400)
+        .attr("y2",400)
+        .style("stroke", "darkblue")
+        .style("stroke-width", "5px");
+    d3.select("svg")
+        .append("circle")
+        .attr("r", 20)
+        .attr("cx",20)
+        .attr("cy",20)
+        .style("fill","red");
+    d3.select("svg")
+        .append("circle")
+        .attr("r", 100)
+        .attr("cx", 400)
+        .attr("cy", 400)
+        .style("fill", "lightblue");
+    d3.select("svg")
+        .append("text")
+        .attr("id", "a")
+        .attr("x", 7)
+        .attr("y",20)
+        .style("opacity", 0)
+        .text("hello");
+    d3.select("svg")
+        .append("text")
+        .attr("id", "b")
+        .attr("x",380)
+        .attr("y",400)
+        .style("opacity",0)
+        .text("how are you?");
+    d3.select("svg")
+        .append("text")
+        .attr("id", "c")
+        .attr("x",380)
+        .attr("y",430)
+        .style("opacity",0)
+        .text("JUST FINE!!");
+    d3.select("svg")
+        .append("text")
+        .attr("id", "d")
+        .attr("x",340)
+        .attr("y",460)
+        .style("opacity",0)
+        .text("thanks for asking");
+    d3.select("#a").transition().delay(600).style("opacity",1);
+    d3.select("#b").transition().delay(1000).style("opacity",1);
+    d3.select("#c").transition().delay(1600).style("opacity",1);
+    d3.select("#d").transition().delay(1900).style("opacity",1);
+</script>
+</html>
